@@ -2,9 +2,11 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import bookRoute from './route/book.route.js'
+import userRoute from './route/user.route.js'
 
 const app = express()
 dotenv.config()
+app.use(express.json())
 
 const PORT = process.env.PORT || 3600;
 
@@ -24,6 +26,7 @@ try {
 //Define Routes
 
 app.use('/book' , bookRoute)
+app.use('/user' , userRoute)
 
 
 
