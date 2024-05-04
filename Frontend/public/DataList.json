@@ -1,0 +1,82 @@
+[
+    {
+        "id" : 1,
+        "name" : "Jungle Story" , 
+        "title" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price" : 20,
+        "category" : "free",
+        "image" : "https://img.freepik.com/free-photo/book-white-background_9975-6518.jpg?t=st=1714815687~exp=1714819287~hmac=d2b6cd0fc0f3354e71afb70005e46b467cfcc9367f390c7484f4f9960f30929f&w=740"
+    },
+    {
+        "id" : 2,
+        "name" : "Book Story" , 
+        "title" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price" : 50,
+        "category" : "free",
+        "image" : "https://img.freepik.com/free-photo/book-white-background_9975-6518.jpg?t=st=1714815687~exp=1714819287~hmac=d2b6cd0fc0f3354e71afb70005e46b467cfcc9367f390c7484f4f9960f30929f&w=740"
+    },
+    {
+        "id" : 3,
+        "name" : "Home Story" , 
+        "title" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price" : 40,
+        "category" : "free",
+        "image" : "https://img.freepik.com/free-photo/book-white-background_9975-6518.jpg?t=st=1714815687~exp=1714819287~hmac=d2b6cd0fc0f3354e71afb70005e46b467cfcc9367f390c7484f4f9960f30929f&w=740"
+    },
+    {
+        "id" : 4,
+        "name" : "Noo Story" , 
+        "title" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price" : 90,
+        "category" : "free",
+        "image" : "https://img.freepik.com/free-photo/book-white-background_9975-6518.jpg?t=st=1714815687~exp=1714819287~hmac=d2b6cd0fc0f3354e71afb70005e46b467cfcc9367f390c7484f4f9960f30929f&w=740"
+    },
+    {
+        "id" : 5,
+        "name" : "Jungle Book" , 
+        "title" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price" : 20,
+        "category" : "free",
+        "image" : "https://img.freepik.com/free-photo/book-white-background_9975-6518.jpg?t=st=1714815687~exp=1714819287~hmac=d2b6cd0fc0f3354e71afb70005e46b467cfcc9367f390c7484f4f9960f30929f&w=740"
+    },
+    {
+        "id" : 6,
+        "name" : "Jungle Story" , 
+        "title" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price" : 20,
+        "category" : "entertainment",
+        "image" : "https://img.freepik.com/free-photo/book-white-background_9975-6518.jpg?t=st=1714815687~exp=1714819287~hmac=d2b6cd0fc0f3354e71afb70005e46b467cfcc9367f390c7484f4f9960f30929f&w=740"
+    },
+    {
+        "id" : 7,
+        "name" : "Music Book" , 
+        "title" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price" : 20,
+        "category" : "song",
+        "image" : "https://img.freepik.com/free-photo/book-white-background_9975-6518.jpg?t=st=1714815687~exp=1714819287~hmac=d2b6cd0fc0f3354e71afb70005e46b467cfcc9367f390c7484f4f9960f30929f&w=740"
+    },
+    {
+        "id" : 8,
+        "name" : "Comendy Book" , 
+        "title" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price" : 20,
+        "category" : "entertainment",
+        "image" : "https://img.freepik.com/free-photo/book-white-background_9975-6518.jpg?t=st=1714815687~exp=1714819287~hmac=d2b6cd0fc0f3354e71afb70005e46b467cfcc9367f390c7484f4f9960f30929f&w=740"
+    },
+    {
+        "id" : 9,
+        "name" : "Islamic Book" , 
+        "title" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price" : 80,
+        "category" : "islamic",
+        "image" : "https://img.freepik.com/free-photo/book-white-background_9975-6518.jpg?t=st=1714815687~exp=1714819287~hmac=d2b6cd0fc0f3354e71afb70005e46b467cfcc9367f390c7484f4f9960f30929f&w=740"
+    },
+    {
+        "id" : 10,
+        "name" : "Food Book" , 
+        "title" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+        "price" : 20,
+        "category" : "food",
+        "image" : "https://img.freepik.com/free-photo/book-white-background_9975-6518.jpg?t=st=1714815687~exp=1714819287~hmac=d2b6cd0fc0f3354e71afb70005e46b467cfcc9367f390c7484f4f9960f30929f&w=740"
+    }
+]

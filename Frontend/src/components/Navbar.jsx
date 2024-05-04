@@ -1,24 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [sticky, setSticky] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const navItems = (
     <>
       <li>
-        <a>Home</a>
+        <Link to={'/'}>Home</Link>
       </li>
       <li>
-        <a>Course</a>
+        <Link to={'/course'}>Course</Link>
       </li>
       <li>
-        <a>Contact</a>
+        <Link to={'/contact'}>Contact</Link>
       </li>
       <li>
-        <a>About</a>
+        <Link to={'/about'}>About</Link>
       </li>
     </>
   );
   return (
-    <div className=" max-w-screen-2xl flex justify-between items-center container py-5 mx-auto md:px-20 px-4">
+    <div
+      className={`max-w-screen-2xl flex justify-between items-center container py-2 mx-auto md:px-20 px-4 fixed top-0 left-0 right-0 bg-[#1D232A] z-50 ${
+        sticky
+          ? " sticky-navbar shadow-md bg-base-200 duration-300 transition-all ease-in-out"
+          : ""
+      }`}
+    >
       <div className="bg-base-100">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
