@@ -12,7 +12,7 @@ const BookCard = ({ book }) => {
       <div className="card-body shadow-lg">
         <h2 className="card-title">
           {book?.name}
-          <div className="badge badge-secondary">NEW</div>
+          <div className="badge badge-secondary">{book?.category || '-'}</div>
         </h2>
         <p>{book?.title}</p>
         <div className="card-actions items-center justify-between">

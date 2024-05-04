@@ -5,7 +5,6 @@ import Login from "./Login";
 const Navbar = () => {
   const [theme , setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light');
   const element = document.documentElement;
-  console.log(theme)
 
   useEffect(() => {
     if(theme === 'dark'){
