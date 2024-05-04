@@ -2,7 +2,7 @@ import React from "react";
 
 const BookCard = ({ book }) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl my-10">
+    <div className="card w-96 bg-base-100 shadow-xl my-10 hover:scale-105 duration-200">
       <figure>
         <img
           src={book?.image}
