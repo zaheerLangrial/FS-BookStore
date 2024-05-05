@@ -1,9 +1,18 @@
-import React from 'react'
-import books from '../../public/DataList.json';
+import React, { useEffect, useState } from 'react'
 import BookCard from './BookCard';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Courses = () => {
+  const [books , setBooks] = useState([])
+  const FetchBooks = async () => {
+    const res = await axios.get('http://localhost:3500/book')
+    setBooks(res.data)
+  }
+
+  useEffect(() => {
+    FetchBooks()
+  },[])
   return (
     <>
       <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">

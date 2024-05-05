@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
@@ -12,6 +13,16 @@ const Login = () => {
     
       const onSubmit = async (data) => {
         console.log(data)
+        await axios.post('http://localhost:3500/user/login' , data).then((res) => {
+          if(res.data){
+            console.log(res.data)
+            alert('Login Successfully')
+          }
+          localStorage.setItem('Users' , JSON.stringify(res.data.user))
+        }).catch((err) => {
+          console.log(err.response.data.message)
+          alert(err.response.data.message)
+        })
         // const userInfo = {
         //   email: data.email,
         //   password: data.password,
