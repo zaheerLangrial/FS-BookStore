@@ -3,6 +3,7 @@ import { Link, json } from 'react-router-dom'
 import Login from '../components/Login'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
+import toast from 'react-hot-toast'
 
 const Signup = () => {
     const {
@@ -15,12 +16,12 @@ const Signup = () => {
         await axios.post('http://localhost:3500/user/signup' , data).then((res) => {
           if(res.data) {
             console.log(res.data)
-            alert('Signup successfully')
+            toast.success('Login Successfully')
           }
           localStorage.setItem('Users' , JSON.stringify(res.data.user))
         }).catch((err) => {
           console.log('error' , err)
-          alert(err.response.data.message)
+          toast.error(err.response.data.message)
         })
         // const userInfo = {
         //   fullname: data.fullname,

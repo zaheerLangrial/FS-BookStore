@@ -31,15 +31,15 @@ export const login = async (req , res) => {
     try {
         const {email , password} = req.body;
         const user = await User.findOne({email});
-        const isMatchPassword = bcryptjs.compare(password , user.password)
-        if(!user || !isMatchPassword){
-            return res.status(400).json({message: 'Invalid Username or Password'})
-        }else {
+        const isMatchPassword = await bcryptjs.compare(password , user.password)
+        if(user && isMatchPassword){
             res.status(200).json({message : 'Login successfull' , user : {
                 _id : user._id,
                 fullname : user.fullname,
                 email: user.email
             }})
+        }else {
+        return res.status(400).json({message: 'Invalid Username or Password'})
         }
     } catch (error) {
         console.log("Error" + error.message)
