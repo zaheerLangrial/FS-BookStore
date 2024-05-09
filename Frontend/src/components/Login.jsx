@@ -1,61 +1,63 @@
-import axios from 'axios';
-import React from 'react'
-import { useForm } from 'react-hook-form';
-import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import axios from "axios";
+import React from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm();
-    
-      const onSubmit = async (data) => {
-        console.log(data)
-        await axios.post('http://localhost:3500/user/login' , data).then((res) => {
-          if(res.data){
-            console.log(res.data)
-            toast.success('Login Successfully')
-          }
-          localStorage.setItem('Users' , JSON.stringify(res.data.user))
-          document.getElementById("my_modal_3").close()
-          window.location.reload()
-        }).catch((err) => {
-          console.log(err.response.data.message)
-          toast.error(err.response.data.message)
-        })
-        // const userInfo = {
-        //   email: data.email,
-        //   password: data.password,
-        // };
-        // await axios
-        //   .post("http://localhost:4001/user/login", userInfo)
-        //   .then((res) => {
-        //     console.log(res.data);
-        //     if (res.data) {
-        //       toast.success("Loggedin Successfully");
-        //       document.getElementById("my_modal_3").close();
-        //       setTimeout(() => {
-        //         window.location.reload();
-        //         localStorage.setItem("Users", JSON.stringify(res.data.user));
-        //       }, 1000);
-        //     }
-        //   })
-        //   .catch((err) => {
-        //     if (err.response) {
-        //       console.log(err);
-        //       toast.error("Error: " + err.response.data.message);
-        //       setTimeout(() => {}, 2000);
-        //     }
-        //   });
-      };
+  const onSubmit = async (data) => {
+    console.log(data);
+    await axios
+      .post("http://localhost:3500/user/login", data)
+      .then((res) => {
+        if (res.data) {
+          toast.success("Login Successfully");
+        }
+        localStorage.setItem("Users", JSON.stringify(res.data.user));
+        document.getElementById("my_modal_3").close();
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      })
+      .catch((err) => {
+        toast.error(err.response.data.message);
+      });
+    // const userInfo = {
+    //   email: data.email,
+    //   password: data.password,
+    // };
+    // await axios
+    //   .post("http://localhost:4001/user/login", userInfo)
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     if (res.data) {
+    //       toast.success("Loggedin Successfully");
+    //       document.getElementById("my_modal_3").close();
+    //       setTimeout(() => {
+    //         window.location.reload();
+    //         localStorage.setItem("Users", JSON.stringify(res.data.user));
+    //       }, 1000);
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     if (err.response) {
+    //       console.log(err);
+    //       toast.error("Error: " + err.response.data.message);
+    //       setTimeout(() => {}, 2000);
+    //     }
+    //   });
+  };
   return (
     <div>
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box">
-          <form onSubmit={handleSubmit(onSubmit)}  method="dialog">
+          <form onSubmit={handleSubmit(onSubmit)} method="dialog">
             {/* if there is a button in form, it will close the modal */}
             <Link
               to="/"
@@ -81,7 +83,7 @@ const Login = () => {
                 <span className="text-sm text-red-500">
                   This field is required
                 </span>
-               )}
+              )}
             </div>
             {/* password */}
             <div className="mt-4 space-y-2">
@@ -120,7 +122,7 @@ const Login = () => {
         </div>
       </dialog>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

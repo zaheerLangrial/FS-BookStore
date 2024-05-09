@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link, json } from 'react-router-dom'
+import { Link, json, useNavigate } from 'react-router-dom'
 import Login from '../components/Login'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import toast from 'react-hot-toast'
 
 const Signup = () => {
+  const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -15,12 +16,14 @@ const Signup = () => {
         console.log(data)
         await axios.post('http://localhost:3500/user/signup' , data).then((res) => {
           if(res.data) {
-            console.log(res.data)
-            toast.success('Login Successfully')
+            setTimeout(() => {
+              toast.success('Login Successfully')
+            },3000)
+            navigate('/')
+            window.location.reload()
           }
           localStorage.setItem('Users' , JSON.stringify(res.data.user))
         }).catch((err) => {
-          console.log('error' , err)
           toast.error(err.response.data.message)
         })
         // const userInfo = {
